@@ -1,0 +1,12 @@
+<ce-header [isAuthenticated]="isAuthenticated" ></ce-header>
+<ce-left-nav *ngIf="isAuthenticated">
+    <h3>Home</h3>
+    <ul>
+        <li>
+            <a routerLink="/">home</a>
+        </li>        
+    </ul>
+</ce-left-nav>
+<div class="router-outlet-container">
+    <router-outlet></router-outlet>
+</div>

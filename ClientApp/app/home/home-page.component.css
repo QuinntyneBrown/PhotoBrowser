@@ -1,0 +1,8 @@
+:host {
+    display:block;
+    content:contain;
+}
+
+p {
+    display:inline-block;
+}
