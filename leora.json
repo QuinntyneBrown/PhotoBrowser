@@ -1,3 +1,4 @@
 ﻿{
-  "useMessaging": "false"
+  "useMessaging": "false",
+  "clientNamespace": "ce"
 }

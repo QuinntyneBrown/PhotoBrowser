@@ -8,16 +8,16 @@ namespace PhotoBrowser.Features.Security
 {
     public class OAuthProvider : OAuthAuthorizationServerProvider
     {
-        public OAuthProvider(Lazy<IAuthConfiguration> lazyAuthConfiguration, IMediator mediator)
+        public OAuthProvider(string authType, IMediator mediator)
         {
-            _lazyAuthConfiguration = lazyAuthConfiguration;
+            _authType = _authType;
             _mediator = mediator;
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var identity = new ClaimsIdentity(_authConfiguration.AuthType);
-            var username = context.OwinContext.Get<string>($"{_authConfiguration.AuthType}:username");
+            var identity = new ClaimsIdentity(_authType);
+            var username = context.OwinContext.Get<string>($"{_authType}:username");
             var tenantUniqueId = new Guid(context.Request.Headers.Get("Tenant"));
 
             var response = await _mediator.Send(new GetClaimsForUserQuery.Request() { Username = username, TenantUniqueId = tenantUniqueId });
@@ -41,7 +41,7 @@ namespace PhotoBrowser.Features.Security
 
                 if (response.IsAuthenticated)
                 {
-                    context.OwinContext.Set($"{_authConfiguration.AuthType}:username", username);
+                    context.OwinContext.Set($"{_authType}:username", username);
                     context.Validated();
                 }
                 else
@@ -69,7 +69,7 @@ namespace PhotoBrowser.Features.Security
         }
 
         protected IMediator _mediator { get; set; }
-        protected IAuthConfiguration _authConfiguration { get { return _lazyAuthConfiguration.Value; } }
-        protected Lazy<IAuthConfiguration> _lazyAuthConfiguration;
+        protected string _authType { get; set; }
+
     }
 }

@@ -13,7 +13,7 @@ namespace PhotoBrowser.Features.Security
             TokenEndpointPath = new PathString(_authConfiguration.TokenPath);
             AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(_authConfiguration.ExpirationMinutes);
             AccessTokenFormat = new JwtWriterFormat(lazyAuthConfiguration, this);
-            Provider = new OAuthProvider(lazyAuthConfiguration, mediator);
+            Provider = new OAuthProvider(_authConfiguration.AuthType, mediator);
             AllowInsecureHttp = true;
         }
 

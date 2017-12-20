@@ -1,0 +1,10 @@
+:host {
+    display:block;    
+    position:relative;
+}
+
+h2 {
+    margin:0 auto;
+    display:block;
+    position:relative;
+}

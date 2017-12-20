@@ -51,7 +51,7 @@ namespace PhotoBrowser
             var lazyAuthConfig = container.Resolve<Lazy<IAuthConfiguration>>();
             app.UseOAuthAuthorizationServer(new OAuthOptions(lazyAuthConfig, mediator));
 
-            app.UseJwtBearerAuthentication(new JwtOptions(authConfig.JwtAudience,authConfig.JwtIssuer,authConfig.JwtKey));
+            app.UseJwtBearerAuthentication(new JwtOptions(authConfig.JwtAudience, authConfig.JwtIssuer, authConfig.JwtKey));
 
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 

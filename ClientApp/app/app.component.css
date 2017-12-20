@@ -1,8 +1,9 @@
 :host(.isAuthenticated) {
     display:grid;
     grid-template-columns:300px 1fr;
-    grid-template-rows: 42px 1fr;
-    grid-gap:20px;
+    grid-template-rows: 70px 70px 1fr;
+    grid-column-gap:20px;
+    grid-row-gap:0px;
 }
 
 :host(.isAuthenticated) ce-header {
@@ -10,14 +11,20 @@
     grid-row:1;
 }
 
+:host(.isAuthenticated) ce-top-bar {
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
 :host(.isAuthenticated) .router-outlet-container {
     grid-column:2;
-    grid-row:2;
+    grid-row:3;
 }
 
 :host(.isAuthenticated) ce-left-nav {
     grid-column:1;
-    grid-row:2;
+    grid-row:3;
+    margin-top:20px;
 }
 
 

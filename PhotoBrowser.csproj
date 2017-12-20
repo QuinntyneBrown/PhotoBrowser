@@ -6,7 +6,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2250BEF5-1F73-47F6-8C6C-8FFBFC22F496}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -21,7 +22,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.4</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -260,6 +262,10 @@
       <DependentUpon>backdrop.component.html</DependentUpon>
     </Content>
     <Content Include="ClientApp\app\shared\components\backdrop.component.html" />
+    <Content Include="ClientApp\app\shared\components\drop-zone.component.css">
+      <DependentUpon>drop-zone.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\shared\components\drop-zone.component.html" />
     <Content Include="ClientApp\app\shared\components\header.component.css">
       <DependentUpon>header.component.html</DependentUpon>
     </Content>
@@ -283,6 +289,10 @@
     <Content Include="ClientApp\app\shared\components\tabs.component.css">
       <DependentUpon>tabs.component.html</DependentUpon>
     </Content>
+    <Content Include="ClientApp\app\shared\components\top-bar.component.css">
+      <DependentUpon>top-bar.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\shared\components\top-bar.component.html" />
     <Content Include="ClientApp\app\tenants\set-tenant-form.component.css">
       <DependentUpon>set-tenant-form.component.html</DependentUpon>
     </Content>
@@ -435,6 +445,9 @@
     <TypeScriptCompile Include="ClientApp\app\shared\components\backdrop.component.ts">
       <DependentUpon>backdrop.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\shared\components\drop-zone.component.ts">
+      <DependentUpon>drop-zone.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\shared\components\header.component.ts">
       <DependentUpon>header.component.html</DependentUpon>
     </TypeScriptCompile>
@@ -456,6 +469,9 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\shared\components\tabs.component.ts">
       <DependentUpon>tabs.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\shared\components\top-bar.component.ts">
+      <DependentUpon>top-bar.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\shared\constants.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\decorators\cache.ts" />
@@ -526,14 +542,15 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58691</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:58691/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

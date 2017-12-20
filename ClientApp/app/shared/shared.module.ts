@@ -31,6 +31,8 @@ import {TabTitleComponent} from "./components/tab-title.component";
 import {TabsComponent} from "./components/tabs.component";
 import {ModalWindowComponent} from "./components/modal-window.component";
 import {BackdropComponent} from "./components/backdrop.component";
+import {DropZoneComponent} from "./components/drop-zone.component";
+import {TopBarComponent} from "./components/top-bar.component";
 
 const providers = [
     EventHub,
@@ -72,7 +74,9 @@ const declarables = [
     TabTitleComponent,
     TabsComponent,
     ModalWindowComponent,
-    BackdropComponent
+    BackdropComponent,
+    DropZoneComponent,
+    TopBarComponent
 ];
 
 @NgModule({
