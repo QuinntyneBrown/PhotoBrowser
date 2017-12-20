@@ -29,5 +29,6 @@ ul li {
 a {
     color:#fff;
     text-decoration:none;   
-    line-height:5.714em; 
+    line-height:5em; 
+    font-size:1.14285em;
 }

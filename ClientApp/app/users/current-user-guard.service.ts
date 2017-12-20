@@ -24,7 +24,7 @@ export class CurrentUserGuardService implements CanActivate {
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): Observable<boolean> {
-
+        
         var currentUser = this._storage.get({ name: constants.CURRENT_USER_KEY });
 
         if (currentUser)

@@ -11,10 +11,8 @@ export class DropZoneComponent {
     ) {
         this.onDragOver = this.onDragOver.bind(this);
         this.onDrop = this.onDrop.bind(this);
-
         this.onDropped = new EventEmitter<any>();
     }
-
 
     public onDragOver(e: DragEvent) {
         e.stopPropagation();
@@ -31,24 +29,19 @@ export class DropZoneComponent {
         this._elementRef.nativeElement.removeEventListener("drop", this.onDrop, false);
     }
 
+    @Output()
     public onDropped: EventEmitter<any>;
     
-    public async onDrop(e: DragEvent) {
+    public async onDrop(e: DragEvent) {       
         e.stopPropagation();
         e.preventDefault();
-
         if (e.dataTransfer && e.dataTransfer.files) {
-            const packageFiles = function (fileList: FileList) {
+            const fileList = e.dataTransfer.files;            
+            for (var i = 0; i < fileList.length; i++) {
                 let formData = new FormData();
-                for (var i = 0; i < fileList.length; i++) {
-                    formData.append(fileList[i].name, fileList[i]);
-                }
-                return formData;
-            }
-
-            const data = packageFiles(e.dataTransfer.files);
-
-            this.onDropped.emit({ data });            
+                formData.append(fileList[i].name, fileList[i]);
+                this.onDropped.emit({ data: formData });                        
+            }                                    
         }        
     }    
 }

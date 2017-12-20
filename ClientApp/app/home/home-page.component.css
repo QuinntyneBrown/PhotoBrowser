@@ -6,3 +6,7 @@
 p {
     display:inline-block;
 }
+
+ce-drop-zone {
+    margin-top:20px;
+}

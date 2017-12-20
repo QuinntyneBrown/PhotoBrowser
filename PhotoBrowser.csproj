@@ -255,6 +255,9 @@
       <DependentUpon>app.component.html</DependentUpon>
     </Content>
     <Content Include="ClientApp\app\app.component.html" />
+    <Content Include="ClientApp\app\galleries\gallery-page.component.css">
+      <DependentUpon>gallery-page.component.html</DependentUpon>
+    </Content>
     <Content Include="ClientApp\app\home\home-page.component.css">
       <DependentUpon>home-page.component.html</DependentUpon>
     </Content>
@@ -326,6 +329,7 @@
     <Content Include="ClientApp\app\shared\components\tab-title.component.html" />
     <Content Include="ClientApp\app\shared\components\left-nav.component.html" />
     <Content Include="ClientApp\app\home\home-page.component.html" />
+    <Content Include="ClientApp\app\galleries\gallery-page.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
@@ -438,6 +442,9 @@
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.routing.ts" />
     <TypeScriptCompile Include="ClientApp\app\environment.ts" />
+    <TypeScriptCompile Include="ClientApp\app\galleries\gallery-page.component.ts">
+      <DependentUpon>gallery-page.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\home\home-page.component.ts">
       <DependentUpon>home-page.component.html</DependentUpon>
     </TypeScriptCompile>
@@ -526,6 +533,14 @@
     <TypeScriptCompile Include="ClientApp\app\users\users.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\guards\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\home\home.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\digital-assets\digital-assets.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\digital-assets\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\digital-assets\digital-asset.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\digital-assets\digital-assets.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\galleries\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\galleries\gallery.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\galleries\galleries.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\galleries\galleries.service.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="leora.json" />
