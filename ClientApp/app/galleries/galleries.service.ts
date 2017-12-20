@@ -17,7 +17,7 @@ export class GalleriesService {
             .catch(this._errorService.catchErrorResponse);
     }
 
-    public get(): Observable<{ gallerys: Array<Gallery> }> {
+    public get(): Observable<{ galleries: Array<Gallery> }> {
         return this._httpClient
             .get<{ gallerys: Array<Gallery> }>(`${this._baseUrl}/api/gallerys/get`)
             .catch(this._errorService.catchErrorResponse);

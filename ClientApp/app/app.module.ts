@@ -9,6 +9,8 @@ import {HomeModule} from "../app/home/home.module";
 import {SharedModule} from "../app/shared";
 import {UsersModule} from "../app/users/users.module";
 import {TenantsModule} from "../app/tenants/tenants.module";
+import {DigitalAssetsModule} from "../app/digital-assets/digital-assets.module";
+import {GalleriesModule} from "../app/galleries/galleries.module";
 
 import {AppComponent} from './app.component';
 
@@ -32,7 +34,9 @@ const providers = [];
         HomeModule,
         SharedModule,
         TenantsModule,
-        UsersModule
+        UsersModule,
+        DigitalAssetsModule,
+        GalleriesModule
 
     ],
     providers: providers,

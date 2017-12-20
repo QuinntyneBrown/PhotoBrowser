@@ -29,4 +29,4 @@ const providers = [GalleriesService];
     declarations: [declarables],
     providers: providers
 })
-export class GallerysModule { }
+export class GalleriesModule { }

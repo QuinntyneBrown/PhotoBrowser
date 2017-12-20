@@ -1,5 +1,4 @@
 import { Component, ElementRef } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
 import { GalleriesService } from "../galleries/galleries.service";
 import { DigitalAssetsService } from "../digital-assets/digital-assets.service";
 
@@ -10,13 +9,24 @@ import { DigitalAssetsService } from "../digital-assets/digital-assets.service";
 })
 export class HomePageComponent {
     constructor(
-        private _client: HttpClient,
         private _galleriesService: GalleriesService,
         private _digitalAssetsService: DigitalAssetsService
     ) { }
 
-    public handleOnDropped($event) {
-        this._client.post<{ digitalAssets: Array<any> }>("/api/digitalassets/upload", $event.data)
-            .subscribe(x => { });
+    public ngOnInit() {
+        this._galleriesService.get()
+            .subscribe(x => this._galleries = x.galleries);
+
+        this._digitalAssetsService.get()
+            .subscribe(x => this._galleries = x.galleries);
     }
+
+    public handleOnDropped($event) {
+        this._digitalAssetsService.upload({ digitalAssets: $event.data })
+            .subscribe(x => { });        
+    }
+
+    public _galleries: Array<any> = [];
+
+    public _digitalAssets: Array<any> = [];
 }
